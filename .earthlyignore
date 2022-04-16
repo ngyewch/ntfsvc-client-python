@@ -1,0 +1,10 @@
+.idea/
+.mypy_cache/
+.task/
+**/__pycache__/
+**/build/
+venv/
+*.pyc
+.earthlyignore
+.gitignore
+Earthfile

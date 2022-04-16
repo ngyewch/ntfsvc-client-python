@@ -1,0 +1,26 @@
+version: "3"
+
+tasks:
+  install:
+    cmds:
+      - poetry update
+
+  check:
+    deps: [ install ]
+    cmds:
+      - poetry run mypy src
+
+  generate-setup:
+    deps: [ install ]
+    cmds:
+      - poetry run poetry2setup > setup.py
+    sources:
+      - pyproject.toml
+    generates:
+      - setup.py
+
+  run:
+    desc: Run
+    deps: [ check ]
+    cmds:
+      - poetry run python3 examples/main.py {{.CLI_ARGS}}

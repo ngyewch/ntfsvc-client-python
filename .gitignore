@@ -1,0 +1,5 @@
+.mypy_cache/
+.task/
+build/
+venv/
+*.pyc
